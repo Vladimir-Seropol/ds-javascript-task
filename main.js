@@ -28,7 +28,7 @@ fileInput.multiple = true; // Разрешаем выбор нескольких
 fileInput.id = 'file-input';
 
 // Устанавливаем стиль фона с SVG
-uploadButton.style.backgroundImage = "url('./public/icon_cloud.svg')"; 
+uploadButton.style.backgroundImage = "url('/icon_cloud.svg')"; 
 uploadButton.style.backgroundSize = 'cover';
 
 // Добавляем класс для стилей
