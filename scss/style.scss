@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 500px;
+    margin: 250px auto;
+    background-color: rgb(195, 247, 179);
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 500px;
+    gap: 20px;
+    padding: 20px;
+    h1 {
+        color: #790404;
+    }
+    p {
+        text-align: center;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // gap: 2px;
+    background-color: white;
+    border-radius: 5px;
+    label {
+        border-right: 2px solid white;
+    }
+}
+
+.container__file {
+    position: relative;
+    display: inline-block;
+}
+
+#file-input {
+    display: none; /* Скрываем стандартный input */
+}
+.container__file-button,
+.container__file-label {
+    border: none;
+
+    padding: 10px 20px;
+    background-color: #790404;
+    box-shadow: 5px 7px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.container__file-button {
+    height: 38.8px;
+    border-radius: 0 5px 5px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    // background-image: url('./public/icon_cloud.svg');
+    background-color: #790404;
+    // border-right: #790404 10px solid;
+}
+
+.container__file-button:hover,
+.container__file-label:hover {
+    background-color: #500202;
+}
+
+.container__file-button:active,
+.container__file-label:active {
+    box-shadow: none;
+}
+.file__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+.file__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: auto;
+    position: relative;
+  
+    cursor: pointer;
+
+    img {
+        width: 70px;
+        height: auto;
+        margin-right: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        &:hover {
+            transition: all 0.3s ease;
+            transform: scale(5);
+            top: 30px;
+            left: 150px;
+            z-index: 1;
+        }
+        &:active {
+            transition: all 0.3s ease;
+            transform: scale(1);
+            box-shadow: none;
+        }
+    }
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+    background-color: #790404;
+    box-shadow: 5px 7px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: #500202;
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+#fileList {
+    // border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.drag-over {
+    border-color: #00f;
+    background-color: rgba(0, 0, 255, 0.1);
+    border: 2px dashed #000; /* Стилизация при перетаскивании */
+}
+
+.loader {
+    position: fixed; /* Или absolute, в зависимости от вашего дизайна */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Обеспечиваем, что индикатор будет поверх других элементов */
+}
+
+.loader span {
+    font-size: 18px; /* Размер шрифта */
+}
