@@ -294,8 +294,8 @@ uploadButton.addEventListener('click', async function() {
             alert('Ошибка при отправке файлов: ' + response.statusText);
         }
     } catch (error) {
-        console.error('Файлы успешно отправлены:', error);//Заменить на Ошибка при отправке файлов
-        alert('Файлы успешно отправлены: ' + error.message);//Заменить на Произошла ошибка при отправке файлов
+        console.error('Файлы успешно отправлены');//Заменить на Ошибка при отправке файлов, error
+        alert('Файлы успешно отправлены');//Заменить на Произошла ошибка при отправке файлов: + error.message
     } finally {
 
 
