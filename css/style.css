@@ -90,6 +90,10 @@
   min-height: 300px;
 }
 
+.file-item.drag-over {
+  background-color: #f0f8ff; /* Цвет фона при перетаскивании */
+}
+
 .file__item {
   display: flex;
   align-items: center;
@@ -97,6 +101,7 @@
   gap: 10px;
   height: auto;
   position: relative;
+  transition: background-color 0.3s ease; /* Плавный переход цвета фона */
   cursor: pointer;
 }
 .file__item img {

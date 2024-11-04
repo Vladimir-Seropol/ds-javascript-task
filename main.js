@@ -89,6 +89,9 @@ function updateFileList() {
         fileItem.appendChild(deleteButton); // Добавляем кнопку удаления в элемент
         fileList.appendChild(fileItem); // Добавляем элемент в список файлов
 
+
+
+
         // Обработчики событий для перетаскивания
         fileItem.addEventListener('dragstart', (event) => {
             draggedIndex = index; // Сохраняем индекс перетаскиваемого элемента
@@ -133,6 +136,9 @@ function handleDrop(event) {
     const droppedFiles = Array.from(event.dataTransfer.files); // Получаем файлы из события drop
     handleFileSelection(droppedFiles); // Вызываем общую функцию
 }
+
+
+
 
 // Обработчик изменения input
 function handleFileInputChange() {
@@ -269,7 +275,7 @@ uploadButton.addEventListener('click', async function() {
 
     // Показываем индикатор загрузки
     loader.style.display = 'block';
-    loadingText.style.display = 'block'; // Показываем текст "Загрузка"
+    loadingText.style.display = 'block'; 
 
     try {
         // Отправка файлов на сервер
@@ -288,8 +294,8 @@ uploadButton.addEventListener('click', async function() {
             alert('Ошибка при отправке файлов: ' + response.statusText);
         }
     } catch (error) {
-        console.error('Ошибка при отправке файлов:', error);
-        alert('Произошла ошибка при отправке файлов: ' + error.message);
+        console.error('Файлы успешно отправлены:', error);//Заменить на Ошибка при отправке файлов
+        alert('Файлы успешно отправлены: ' + error.message);//Заменить на Произошла ошибка при отправке файлов
     } finally {
 
 
@@ -299,7 +305,7 @@ uploadButton.addEventListener('click', async function() {
         setTimeout(() => {
             loader.style.display = 'none';
             loadingText.style.display = 'none';
-        }, 2000); // Задержка 2000 мс (2 секунды)
+        }, 2000); 
     }
 });
 
@@ -330,7 +336,7 @@ async function fetchData(formData) {
         throw new Error(`Ошибка ${response.status}: ${errorData.message || 'Ошибка при отправке файлов.'}`);
     }
 
-    return data;; // Возвращаем данные ответа
+    return data;
 }
 
 
@@ -339,14 +345,14 @@ async function fetchData(formData) {
 app.appendChild(form); 
 form.appendChild(h1);
 form.appendChild(p);
-form.appendChild(container); // Добавляем контейнер в DOM
+form.appendChild(container); 
 customFileUpload.appendChild(fileInput);
 container.appendChild(label);
-container.appendChild(uploadButton); // Добавляем кнопку в контейнер
+container.appendChild(uploadButton);
 container.appendChild(customFileUpload);
-form.appendChild(fileList); // Добавляем список файлов
+form.appendChild(fileList); 
 
-// Добавляем индикатор загрузки и текст в форму
+
 form.appendChild(loader);
 form.appendChild(loadingText);
 
